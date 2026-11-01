@@ -508,11 +508,69 @@ h2{font-size:clamp(2rem,3.6vw,3rem);letter-spacing:-.025em;line-height:1.1}
  .proof-row{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:12px;margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)));padding-right:max(16px,env(safe-area-inset-right,0px));scrollbar-width:thin}
  .proof-row .fig{flex:0 0 78%;scroll-snap-align:start}
 }
-</style></head><body><header class="site-header"><div class="wrap bar"><a class="brand" href="index.html" aria-label="Thom Digital home"><img class="brand-mark" src="img/thom-digital-mark-purple-transparent.png" alt=""><span class="brand-name">THOM DIGITAL</span></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button><nav id="nav" class="nav" aria-label="Main"><a href="index.html" aria-current="page">Home</a><div class="has-dd"><a href="services.html">Services</a><button class="dd-btn" type="button" aria-expanded="false" aria-label="Show service pages"></button><div class="dd"><a href="shopify.html">Shopify</a><a href="book-marketing.html">Book Marketing</a><a href="local-businesses.html">Local Businesses</a><a href="tiktok-shop.html">TikTok Shop</a></div></div><a href="projects.html">Projects</a><a href="proof.html">Reviews &amp; Testimonials</a><a href="books.html">Books</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="btn btn-solid nav-cta" href="contact.html">Get a free assessment</a></nav></div></header><main id="main"><section class="vhero hero-poster" style="background-image:url(video/thom-digital-hero-poster.jpg)">
-<video id="hv" autoplay muted loop playsinline preload="auto" poster="video/thom-digital-hero-poster.jpg" aria-hidden="true"><source src="video/thom-digital-hero-loop.mp4" type="video/mp4"></video>
-<div class="wrap vhero-in"><div class="vhero-copy"><h1>Marketing for Shopify stores and books.</h1>
-<p class="lede">We fix the offer, the page and the trust first. Then we bring the right people to them.</p>
-<div class="hero-actions"><a class="btn btn-gold" href="services.html">View services</a></div>
+
+/* ===== Live hero ===== */
+.hero-live{--mx:0;--my:0;background:linear-gradient(125deg,#2a1170,#4a22c4 55%,#5a2bda);background-size:160% 160%;animation:hlbg 18s ease-in-out infinite alternate;min-height:clamp(600px,86vh,780px)}
+.hero-live::after{display:none}
+@keyframes hlbg{from{background-position:0% 40%}to{background-position:100% 60%}}
+.hl-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55}
+.o1{width:460px;height:460px;background:#7a4cff;top:-140px;right:8%;animation:drift1 16s ease-in-out infinite alternate}
+.o2{width:380px;height:380px;background:#3a1aa8;bottom:-160px;left:22%;animation:drift2 20s ease-in-out infinite alternate}
+.o3{width:220px;height:220px;background:#ffc300;opacity:.16;top:38%;right:34%;animation:drift1 22s ease-in-out infinite alternate-reverse}
+@keyframes drift1{from{transform:translate(0,0)}to{transform:translate(-60px,50px)}}
+@keyframes drift2{from{transform:translate(0,0)}to{transform:translate(70px,-40px)}}
+.hl-mark{position:absolute;right:-6%;top:50%;width:min(62vw,820px);opacity:.07;transform:translateY(-50%) rotate(-6deg);animation:markfloat 14s ease-in-out infinite alternate}
+@keyframes markfloat{from{transform:translateY(-52%) rotate(-6deg)}to{transform:translateY(-48%) rotate(-3deg)}}
+.hl-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
+.hl-h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.hl-h1 .ln>span{display:block;transform:translateY(105%);animation:lnup .9s cubic-bezier(.2,.8,.2,1) forwards}
+.hl-h1 .ln:nth-child(1)>span{animation-delay:.1s}.hl-h1 .ln:nth-child(2)>span{animation-delay:.25s}.hl-h1 .ln:nth-child(3)>span{animation-delay:.4s}
+@keyframes lnup{to{transform:none}}
+.hl-in{opacity:0;transform:translateY(14px);animation:fin .8s cubic-bezier(.2,.8,.2,1) var(--d,.6s) forwards}
+@keyframes fin{to{opacity:1;transform:none}}
+.hl-stack{position:relative;height:480px;perspective:1200px}
+.hc{position:absolute;margin:0;background:#fff;border-radius:16px;padding:8px 8px 0;box-shadow:0 30px 60px -20px rgba(10,3,40,.6);opacity:0;animation:cardin .9s cubic-bezier(.2,.8,.2,1) var(--d,.5s) forwards;transition:transform .35s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.hc img{display:block;width:100%;height:100%;object-fit:cover;border-radius:10px;background:#f4f4f6}
+.hc figcaption{font-size:.78rem;line-height:1.35;color:#3a3a4a;padding:9px 6px 10px}
+.hc1{width:64%;left:2%;top:4%;--k:16}
+.hc2{width:58%;right:0;top:34%;--k:-22}
+.hc3{width:44%;left:20%;bottom:0;--k:28}
+.hc1 img{height:190px;object-position:top}.hc2 img{height:170px;object-position:top left}.hc3 img{height:150px}
+@keyframes cardin{from{opacity:0;translate:0 40px}to{opacity:1;translate:0 0}}
+.hc1,.hc2,.hc3{transform:translate(calc(var(--mx)*var(--k)*1px),calc(var(--my)*var(--k)*1px))}
+.hc1{animation:cardin .9s cubic-bezier(.2,.8,.2,1) var(--d) forwards,bobA 7s ease-in-out 1.6s infinite alternate}
+.hc2{animation:cardin .9s cubic-bezier(.2,.8,.2,1) var(--d) forwards,bobB 8s ease-in-out 1.7s infinite alternate}
+.hc3{animation:cardin .9s cubic-bezier(.2,.8,.2,1) var(--d) forwards,bobA 9s ease-in-out 1.8s infinite alternate-reverse}
+@keyframes bobA{from{margin-top:0}to{margin-top:-14px}}
+@keyframes bobB{from{margin-top:0}to{margin-top:12px}}
+@media (max-width:900px){
+ .hl-grid{grid-template-columns:1fr;gap:28px}
+ .hl-stack{height:340px}
+ .hc1 img{height:130px}.hc2 img{height:116px}.hc3 img{height:100px}
+ .hc figcaption{font-size:.7rem}
+ .hl-mark{width:110vw;right:-30%}
+}
+@media (prefers-reduced-motion:reduce){
+ .hero-live,.orb,.hl-mark,.hc{animation:none!important}
+ .hl-h1 .ln>span{transform:none;animation:none}
+ .hl-in{opacity:1;transform:none;animation:none}
+ .hc{opacity:1}
+}
+.hc1{z-index:3}.hc2{z-index:2}.hc3{z-index:1}
+.hl-stack{height:520px}
+.hc1{top:0}.hc2{top:36%}.hc3{left:14%}
+@media (max-width:900px){.hl-stack{height:360px}.hc2{top:34%}}
+</style></head><body><header class="site-header"><div class="wrap bar"><a class="brand" href="index.html" aria-label="Thom Digital home"><img class="brand-mark" src="img/thom-digital-mark-purple-transparent.png" alt=""><span class="brand-name">THOM DIGITAL</span></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button><nav id="nav" class="nav" aria-label="Main"><a href="index.html" aria-current="page">Home</a><div class="has-dd"><a href="services.html">Services</a><button class="dd-btn" type="button" aria-expanded="false" aria-label="Show service pages"></button><div class="dd"><a href="shopify.html">Shopify</a><a href="book-marketing.html">Book Marketing</a><a href="local-businesses.html">Local Businesses</a><a href="tiktok-shop.html">TikTok Shop</a></div></div><a href="projects.html">Projects</a><a href="proof.html">Reviews &amp; Testimonials</a><a href="books.html">Books</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="btn btn-solid nav-cta" href="contact.html">Get a free assessment</a></nav></div></header><main id="main"><section class="vhero hero-live" id="hero">
+<div class="hl-bg" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span><img class="hl-mark" src="img/thom-digital-mark-white-transparent.png" alt=""></div>
+<div class="wrap vhero-in hl-grid">
+<div class="vhero-copy"><h1 class="hl-h1"><span class="ln"><span>Marketing for</span></span><span class="ln"><span>Shopify stores</span></span><span class="ln"><span>and books.</span></span></h1>
+<p class="lede hl-in" style="--d:.75s">We fix the offer, the page and the trust first. Then we bring the right people to them.</p>
+<div class="hero-actions hl-in" style="--d:.95s"><a class="btn btn-gold" href="services.html">View services</a></div></div>
+<div class="hl-stack" aria-hidden="true">
+<figure class="hc hc1" style="--d:.5s"><img src="img/proof-07-shopify-daily-sales.jpg" alt=""><figcaption>Shopify, one day: $32,719.9 in sales</figcaption></figure>
+<figure class="hc hc2" style="--d:.7s"><img src="img/proof-01-tiktok-shop-28-days.jpg" alt=""><figcaption>TikTok Shop, last 28 days: $4,161.91 GMV</figcaption></figure>
+<figure class="hc hc3" style="--d:.9s"><img src="img/project-ayni-homepage.jpg" alt=""><figcaption>Ayni, store design on Shopify</figcaption></figure>
 </div></div></section>
 <section class="sec sec-mist plat-sec"><div class="wrap"><div class="plat"><p>Platforms we work on</p><div class="plat-logos"><img src="img/icons/shopify-wordmark-purple.png" alt="Shopify"><img src="img/icons/tiktok-shop-wordmark-purple.png" alt="TikTok Shop"><img class="sq" src="img/icons/instagram-purple.png" alt="Instagram"><img class="sq" src="img/icons/facebook-purple.png" alt="Facebook"><img class="sq" src="img/icons/tiktok-purple.png" alt="TikTok"></div></div></div></section><section class="sec sec-white"><div class="wrap"><div class="sec-head"><h2>What we do</h2></div><div class="duo"><div class="panel panel-purple"><span class="ico"><img src="img/icons/shopify-bag-white.png" alt=""></span><h3>Shopify</h3><ul><li>Shopify development and redesign</li><li>Facebook and TikTok ads</li><li>Conversion and trust fixes</li><li>SEO and Google Search Console</li></ul><a class="go" href="shopify.html">See Shopify services</a></div><div class="panel panel-mist"><span class="ico"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12c-4-3-10-4-17-3v28c7-1 13 0 17 3 4-3 10-4 17-3V9c-7-1-13 0-17 3z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M24 12v28" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></span><h3>Book marketing and promotion</h3><ul><li>Amazon ads</li><li>Social media ads</li><li>Goodreads and reviews</li><li>Email and cinematic trailers</li></ul><a class="go" href="book-marketing.html">See book marketing</a></div></div><div class="also"><h3>We also help</h3><a class="also-row" href="local-businesses.html"><strong><img src="img/icons/local-pin-purple.png" alt="">Local businesses</strong><span>More enquiries for service businesses and real estate agents, without chasing leads.</span><em>View</em></a><a class="also-row" href="tiktok-shop.html"><strong><img src="img/icons/tiktok-shop-bag-purple.png" alt="">TikTok Shop sellers</strong><span>Set up, list and grow a TikTok Shop that actually sells.</span><em>View</em></a></div></div></section><section class="sec sec-white"><div class="wrap"><div class="sec-head"><h2>Results from real accounts</h2></div><div class="proof-row"><figure class="fig"><button type="button" data-full="img/proof-01-tiktok-shop-28-days.jpg" data-cap="TikTok Shop Seller Center, last 28 days: $4,161.91 GMV (up 370 percent), 172 buyers (up 648 percent), 183 ordered SKUs and 34,614 visitors." aria-label="Open full size: TikTok Shop Seller Center dashboard for the last 28 days."><img src="img/proof-01-tiktok-shop-28-days.jpg" alt="TikTok Shop Seller Center dashboard for the last 28 days." loading="lazy"></button><figcaption>TikTok Shop Seller Center, last 28 days: $4,161.91 GMV (up 370 percent), 172 buyers (up 648 percent), 183 ordered SKUs and 34,614 visitors.</figcaption></figure><figure class="fig"><button type="button" data-full="img/proof-05-meta-ads-manager.jpg" data-cap="Meta Ads Manager: one ad set with 353 website purchases at $57.43 each on $20,272.35 spent. Total spend across the account shown: $55,445.79." aria-label="Open full size: Meta Ads Manager table showing website purchases and cost per purchase."><img src="img/proof-05-meta-ads-manager.jpg" alt="Meta Ads Manager table showing website purchases and cost per purchase." loading="lazy"></button><figcaption>Meta Ads Manager: one ad set with 353 website purchases at $57.43 each on $20,272.35 spent. Total spend across the account shown: $55,445.79.</figcaption></figure><figure class="fig"><button type="button" data-full="img/proof-08-shopify-first-50k-day.jpg" data-cap="Shopify analytics, November 2024: $50.99K in sales on 30 November, marked as the store&#x27;s first 50K day." aria-label="Open full size: Shopify analytics for November 2024 marking a first 50K day."><img src="img/proof-08-shopify-first-50k-day.jpg" alt="Shopify analytics for November 2024 marking a first 50K day." loading="lazy"></button><figcaption>Shopify analytics, November 2024: $50.99K in sales on 30 November, marked as the store&#x27;s first 50K day.</figcaption></figure><figure class="fig"><button type="button" data-full="img/proof-07-shopify-daily-sales.jpg" data-cap="Shopify dashboard, one day: $32,719.9 in sales from 629 orders, 4.56 percent conversion rate." aria-label="Open full size: Shopify dashboard showing one day of sales."><img src="img/proof-07-shopify-daily-sales.jpg" alt="Shopify dashboard showing one day of sales." loading="lazy"></button><figcaption>Shopify dashboard, one day: $32,719.9 in sales from 629 orders, 4.56 percent conversion rate.</figcaption></figure></div><p class="more"><a class="link" href="projects.html">See all projects</a></p></div></section><section class="sec sec-mist"><div class="wrap"><div class="sec-head"><h2>How it works</h2></div><ol class="steps"><li><h3>Send us your link</h3><p>Your store, book page, Instagram or website.</p></li><li><h3>We email your free assessment</h3><p>What is holding sales back and what we would fix first.</p></li><li><h3>We send a plan if it fits</h3><p>You keep the assessment either way.</p></li></ol><div class="vslots" style="--cols:1"><div class="vhost" data-slot="home-assessment" data-title="See how the free assessment works" data-hint="A short video explaining the three steps."></div></div></div></section><section class="sec sec-white"><div class="wrap"><div class="sec-head"><h2>FAQ</h2></div><div class="faq"><details class="q"><summary>What is the free assessment?</summary><p>A free written review of your store, book page or business, with what we would fix first.</p></details><details class="q"><summary>Do you guarantee sales?</summary><p>No. We improve what we control and show you the numbers.</p></details><details class="q"><summary>Who do you work with?</summary><p>Shopify store owners, authors, local and service businesses, real estate agents and TikTok Shop sellers.</p></details></div></div></section><section class="cta-band"><div class="wrap cta-in"><div><h2>Send us your link. We&#x27;ll tell you what we&#x27;d fix first.</h2></div><div class="cta-actions"><a class="btn btn-gold" href="contact.html">Get a free assessment</a><a class="btn btn-ghost-light" href="projects.html">See our work</a></div></div></section></main><footer class="site-footer"><div class="wrap"><div class="f-top">
 <div class="f-brand"><a class="brand" href="index.html"><img class="brand-mark" src="img/thom-digital-mark-white-transparent.png" alt=""><span class="brand-name">THOM DIGITAL</span></a>
@@ -525,6 +583,10 @@ h2{font-size:clamp(2rem,3.6vw,3rem);letter-spacing:-.025em;line-height:1.1}
 var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');
 if(b){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);});}
 document.querySelectorAll('.dd-btn').forEach(function(d){d.addEventListener('click',function(){var h=d.parentNode,o=h.classList.toggle('open');d.setAttribute('aria-expanded',o);});});
+var hero=document.getElementById('hero');
+if(hero&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&matchMedia('(hover:hover)').matches){
+ hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect();hero.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));hero.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3));});
+ hero.addEventListener('mouseleave',function(){hero.style.setProperty('--mx',0);hero.style.setProperty('--my',0);});}
 /* hero video */
 var v=document.getElementById('hv');
 if(v){var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;var c=navigator.connection||{};

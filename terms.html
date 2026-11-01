@@ -508,6 +508,59 @@ h2{font-size:clamp(2rem,3.6vw,3rem);letter-spacing:-.025em;line-height:1.1}
  .proof-row{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:12px;margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)));padding-right:max(16px,env(safe-area-inset-right,0px));scrollbar-width:thin}
  .proof-row .fig{flex:0 0 78%;scroll-snap-align:start}
 }
+
+/* ===== Live hero ===== */
+.hero-live{--mx:0;--my:0;background:linear-gradient(125deg,#2a1170,#4a22c4 55%,#5a2bda);background-size:160% 160%;animation:hlbg 18s ease-in-out infinite alternate;min-height:clamp(600px,86vh,780px)}
+.hero-live::after{display:none}
+@keyframes hlbg{from{background-position:0% 40%}to{background-position:100% 60%}}
+.hl-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55}
+.o1{width:460px;height:460px;background:#7a4cff;top:-140px;right:8%;animation:drift1 16s ease-in-out infinite alternate}
+.o2{width:380px;height:380px;background:#3a1aa8;bottom:-160px;left:22%;animation:drift2 20s ease-in-out infinite alternate}
+.o3{width:220px;height:220px;background:#ffc300;opacity:.16;top:38%;right:34%;animation:drift1 22s ease-in-out infinite alternate-reverse}
+@keyframes drift1{from{transform:translate(0,0)}to{transform:translate(-60px,50px)}}
+@keyframes drift2{from{transform:translate(0,0)}to{transform:translate(70px,-40px)}}
+.hl-mark{position:absolute;right:-6%;top:50%;width:min(62vw,820px);opacity:.07;transform:translateY(-50%) rotate(-6deg);animation:markfloat 14s ease-in-out infinite alternate}
+@keyframes markfloat{from{transform:translateY(-52%) rotate(-6deg)}to{transform:translateY(-48%) rotate(-3deg)}}
+.hl-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
+.hl-h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.hl-h1 .ln>span{display:block;transform:translateY(105%);animation:lnup .9s cubic-bezier(.2,.8,.2,1) forwards}
+.hl-h1 .ln:nth-child(1)>span{animation-delay:.1s}.hl-h1 .ln:nth-child(2)>span{animation-delay:.25s}.hl-h1 .ln:nth-child(3)>span{animation-delay:.4s}
+@keyframes lnup{to{transform:none}}
+.hl-in{opacity:0;transform:translateY(14px);animation:fin .8s cubic-bezier(.2,.8,.2,1) var(--d,.6s) forwards}
+@keyframes fin{to{opacity:1;transform:none}}
+.hl-stack{position:relative;height:480px;perspective:1200px}
+.hc{position:absolute;margin:0;background:#fff;border-radius:16px;padding:8px 8px 0;box-shadow:0 30px 60px -20px rgba(10,3,40,.6);opacity:0;animation:cardin .9s cubic-bezier(.2,.8,.2,1) var(--d,.5s) forwards;transition:transform .35s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.hc img{display:block;width:100%;height:100%;object-fit:cover;border-radius:10px;background:#f4f4f6}
+.hc figcaption{font-size:.78rem;line-height:1.35;color:#3a3a4a;padding:9px 6px 10px}
+.hc1{width:64%;left:2%;top:4%;--k:16}
+.hc2{width:58%;right:0;top:34%;--k:-22}
+.hc3{width:44%;left:20%;bottom:0;--k:28}
+.hc1 img{height:190px;object-position:top}.hc2 img{height:170px;object-position:top left}.hc3 img{height:150px}
+@keyframes cardin{from{opacity:0;translate:0 40px}to{opacity:1;translate:0 0}}
+.hc1,.hc2,.hc3{transform:translate(calc(var(--mx)*var(--k)*1px),calc(var(--my)*var(--k)*1px))}
+.hc1{animation:cardin .9s cubic-bezier(.2,.8,.2,1) var(--d) forwards,bobA 7s ease-in-out 1.6s infinite alternate}
+.hc2{animation:cardin .9s cubic-bezier(.2,.8,.2,1) var(--d) forwards,bobB 8s ease-in-out 1.7s infinite alternate}
+.hc3{animation:cardin .9s cubic-bezier(.2,.8,.2,1) var(--d) forwards,bobA 9s ease-in-out 1.8s infinite alternate-reverse}
+@keyframes bobA{from{margin-top:0}to{margin-top:-14px}}
+@keyframes bobB{from{margin-top:0}to{margin-top:12px}}
+@media (max-width:900px){
+ .hl-grid{grid-template-columns:1fr;gap:28px}
+ .hl-stack{height:340px}
+ .hc1 img{height:130px}.hc2 img{height:116px}.hc3 img{height:100px}
+ .hc figcaption{font-size:.7rem}
+ .hl-mark{width:110vw;right:-30%}
+}
+@media (prefers-reduced-motion:reduce){
+ .hero-live,.orb,.hl-mark,.hc{animation:none!important}
+ .hl-h1 .ln>span{transform:none;animation:none}
+ .hl-in{opacity:1;transform:none;animation:none}
+ .hc{opacity:1}
+}
+.hc1{z-index:3}.hc2{z-index:2}.hc3{z-index:1}
+.hl-stack{height:520px}
+.hc1{top:0}.hc2{top:36%}.hc3{left:14%}
+@media (max-width:900px){.hl-stack{height:360px}.hc2{top:34%}}
 </style></head><body><header class="site-header"><div class="wrap bar"><a class="brand" href="index.html" aria-label="Thom Digital home"><img class="brand-mark" src="img/thom-digital-mark-purple-transparent.png" alt=""><span class="brand-name">THOM DIGITAL</span></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button><nav id="nav" class="nav" aria-label="Main"><a href="index.html">Home</a><div class="has-dd"><a href="services.html">Services</a><button class="dd-btn" type="button" aria-expanded="false" aria-label="Show service pages"></button><div class="dd"><a href="shopify.html">Shopify</a><a href="book-marketing.html">Book Marketing</a><a href="local-businesses.html">Local Businesses</a><a href="tiktok-shop.html">TikTok Shop</a></div></div><a href="projects.html">Projects</a><a href="proof.html">Reviews &amp; Testimonials</a><a href="books.html">Books</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="btn btn-solid nav-cta" href="contact.html">Get a free assessment</a></nav></div></header><main id="main"><section class="page-hero"><div class="wrap"><div class="vhero-copy" style="max-width:780px"><p class="crumb"><a href="index.html">Home</a> / Terms</p><h1>Terms</h1></div></div></section><section class="sec sec-white"><div class="wrap"><div class="legal"><p class="muted">Last updated 1 November 2026</p><h2>About these terms</h2><p>These terms cover your use of thomdigital.org and our enquiry process. Paid work is covered by the written plan we send you by email, which you agree to before work starts.</p><h2>What we do</h2><p>We work on Shopify stores, book marketing, local business marketing and TikTok Shop, including pages, trust, ads and reporting. We describe the work and what we need from you in a written plan.</p><h2>Payment</h2><p>We send a written plan with the scope and cost by email, and work starts after you agree to it. Invoices come only from billing@thomdigital.org. You can pay by bank transfer, PayPal, Stripe or Wise, as set out in the plan. If you need another method, email us before work starts. The full details are in our <a class="link" href="payment.html">Payment Policy</a>.</p><p>Ad budget is paid by you directly to the ad platform, such as Meta or TikTok. We do not hold your ad budget, and platform charges are separate from our fees.</p><h2>No guarantees</h2><p>We do not guarantee sales, rankings, reviews or any result. Results depend on the product, price, offer, market, ad platforms and many things outside our control. Any figures on this site come from real accounts at the time shown and are not a promise of what you will get.</p><h2>Your responsibilities</h2><p>You give us accurate information and the access we need, and you confirm you have the right to use the products, images, books and accounts you ask us to work on. You follow the rules of the platforms involved, such as Shopify, Meta, TikTok and Amazon.</p><h2>Third-party platforms</h2><p>Ad and store platforms can change rules, reject ads or limit accounts at any time. We are not responsible for decisions made by those platforms.</p><h2>Work we show</h2><p>We show client work, screenshots and videos on this site with the client's permission. If you are a client and want something removed, email us and we will remove it.</p><h2>Ownership</h2><p>The content and design of this site belong to Thom Digital. Work we make for you is covered by the written plan.</p><h2>Limits</h2><p>We are not liable for indirect or lost profits. Nothing in these terms limits any right you have by law.</p><h2>Contact</h2><p>Questions about these terms: <a class="link" href="mailto:info@thomdigital.org">info@thomdigital.org</a>.</p></div></div></section></main><footer class="site-footer"><div class="wrap"><div class="f-top">
 <div class="f-brand"><a class="brand" href="index.html"><img class="brand-mark" src="img/thom-digital-mark-white-transparent.png" alt=""><span class="brand-name">THOM DIGITAL</span></a>
 <p>A growth agency for Shopify stores, authors, local businesses and TikTok Shop sellers.</p><div class="socs "><a class="soc" href="https://instagram.com/thomdigital__org" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></a><a class="soc" href="https://www.facebook.com/thomdigitalorg1" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M13.2 20.4v-6.3h2.1l.4-2.4h-2.5V10.2c0-.7.3-1.2 1.3-1.2h1.3V7c-.3 0-1-.1-1.9-.1-1.9 0-3.2 1.2-3.2 3.3v1.5H8.6v2.4h2.1v6.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></a><a class="soc" href="https://tiktok.com/@thomdigital.org" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.2a3.6 3.6 0 1 1-3.6-3.6M14 3c.4 2.6 2 4.2 4.6 4.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="soc" href="https://twitter.com/thomdigitalorg" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4.5l15 15M19.5 4.5l-15 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a><a class="soc" href="https://www.linkedin.com/in/thomdigitalorg" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10.5V16M8 7.8v.1M11.5 16v-5.5M11.5 13c0-1.6 1-2.6 2.4-2.6 1.4 0 2.1 1 2.1 2.6V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a></div></div>
@@ -519,6 +572,10 @@ h2{font-size:clamp(2rem,3.6vw,3rem);letter-spacing:-.025em;line-height:1.1}
 var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');
 if(b){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);});}
 document.querySelectorAll('.dd-btn').forEach(function(d){d.addEventListener('click',function(){var h=d.parentNode,o=h.classList.toggle('open');d.setAttribute('aria-expanded',o);});});
+var hero=document.getElementById('hero');
+if(hero&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&matchMedia('(hover:hover)').matches){
+ hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect();hero.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));hero.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3));});
+ hero.addEventListener('mouseleave',function(){hero.style.setProperty('--mx',0);hero.style.setProperty('--my',0);});}
 /* hero video */
 var v=document.getElementById('hv');
 if(v){var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;var c=navigator.connection||{};
