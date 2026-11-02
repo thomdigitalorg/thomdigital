@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Thom Digital | Growth Agency for Shopify, Books and Local Businesses</title><meta name="description" content="Thom Digital helps Shopify stores, authors, local businesses and TikTok Shop sellers fix the offer, page and trust first, then bring the right buyers. Free written assessment."><meta name="claude:viewport-fit-sides" content="cover"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#5a2bda"><meta property="og:image" content="https://thomdigital.org/img/thom-digital-logo-full-lavender.png"><link rel="canonical" href="https://thomdigital.org/"><meta property="og:type" content="website"><meta property="og:site_name" content="Thom Digital"><meta property="og:title" content="Thom Digital | Growth Agency for Shopify, Books and Local Businesses"><meta property="og:description" content="Thom Digital helps Shopify stores, authors, local businesses and TikTok Shop sellers fix the offer, page and trust first, then bring the right buyers. Free written assessment."><meta property="og:url" content="https://thomdigital.org/"><meta name="twitter:card" content="summary"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@1,500;1,600&family=Poppins:wght@500;600;700&display=swap"><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap"><style>/* Thom Digital. Layout: full-width video hero, strict purple / soft grey / white bands, ruled lists, one gold button per view. */
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><script>try{if(sessionStorage.getItem("tdpt")){document.documentElement.classList.add("arrive");sessionStorage.removeItem("tdpt");setTimeout(function(){document.documentElement.classList.remove("arrive")},1500)}}catch(e){}</script><title>Thom Digital | Growth Agency for Shopify, Books and Local Businesses</title><meta name="description" content="Thom Digital helps Shopify stores, authors, local businesses and TikTok Shop sellers fix the offer, page and trust first, then bring the right buyers. Free written assessment."><meta name="claude:viewport-fit-sides" content="cover"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#5a2bda"><meta property="og:image" content="https://thomdigital.org/img/thom-digital-logo-full-lavender.png"><link rel="canonical" href="https://thomdigital.org/"><meta property="og:type" content="website"><meta property="og:site_name" content="Thom Digital"><meta property="og:title" content="Thom Digital | Growth Agency for Shopify, Books and Local Businesses"><meta property="og:description" content="Thom Digital helps Shopify stores, authors, local businesses and TikTok Shop sellers fix the offer, page and trust first, then bring the right buyers. Free written assessment."><meta property="og:url" content="https://thomdigital.org/"><meta name="twitter:card" content="summary"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@1,500;1,600&family=Poppins:wght@500;600;700&display=swap"><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap"><style>/* Thom Digital. Layout: full-width video hero, strict purple / soft grey / white bands, ruled lists, one gold button per view. */
 :root{
  --purple:#5a2bda; --purple-deep:#3d1b9e; --night:#2a1170; --mist:#e4e9f0; --gold:#ffc300;
  --ink:#1a1a1a; --muted:#666666; --soft:#f5f5f5; --white:#ffffff; --line:#cfd6e2;
@@ -570,7 +570,17 @@ h2{font-size:clamp(2rem,3.6vw,3rem);letter-spacing:-.025em;line-height:1.1}
  .vhero::after{display:none}
  .vhero-in{padding-block:30px 52px}
 }
-</style></head><body><header class="site-header"><div class="wrap bar"><a class="brand" href="/" aria-label="Thom Digital home"><img class="brand-mark" src="img/thom-digital-mark-purple-transparent.png" alt=""><span class="brand-name">THOM DIGITAL</span></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button><nav id="nav" class="nav" aria-label="Main"><a href="/" aria-current="page">Home</a><div class="has-dd"><a href="services">Services</a><button class="dd-btn" type="button" aria-expanded="false" aria-label="Show service pages"></button><div class="dd"><a href="shopify">Shopify</a><a href="book-marketing">Book Marketing</a><a href="local-businesses">Local Businesses</a><a href="tiktok-shop">TikTok Shop</a></div></div><a href="projects">Projects</a><a href="proof">Reviews &amp; Testimonials</a><a href="books">Books</a><a href="about">About</a><a href="contact">Contact</a><a class="btn btn-solid nav-cta" href="contact">Get a free assessment</a></nav></div></header><main id="main"><section class="vhero hero-poster" style="background-image:url(video/thom-digital-hero-poster.jpg)">
+
+/* Page transition */
+.pt{position:fixed;inset:0;z-index:9999;background:#5a2bda;display:grid;place-items:center;pointer-events:none;transform:translateY(-101%);transition:transform .6s cubic-bezier(.76,0,.2,1);will-change:transform}
+.pt::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:6px;background:#ffc300}
+.pt img{width:92px;height:auto;opacity:0;transform:scale(.92);transition:opacity .25s ease .2s,transform .5s ease .1s}
+.pt.go{transform:translateY(0);transition-duration:.5s}
+.pt.go img{opacity:1;transform:scale(1)}
+html.arrive .pt{transform:translateY(0);transition:none}
+html.arrive .pt img{opacity:1;transform:scale(1);transition:none}
+@media (prefers-reduced-motion:reduce){.pt{display:none}}
+</style></head><body><div class="pt" aria-hidden="true"><img src="img/thom-digital-mark-white-transparent.png" alt=""></div><header class="site-header"><div class="wrap bar"><a class="brand" href="/" aria-label="Thom Digital home"><img class="brand-mark" src="img/thom-digital-mark-purple-transparent.png" alt=""><span class="brand-name">THOM DIGITAL</span></a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button><nav id="nav" class="nav" aria-label="Main"><a href="/" aria-current="page">Home</a><div class="has-dd"><a href="services">Services</a><button class="dd-btn" type="button" aria-expanded="false" aria-label="Show service pages"></button><div class="dd"><a href="shopify">Shopify</a><a href="book-marketing">Book Marketing</a><a href="local-businesses">Local Businesses</a><a href="tiktok-shop">TikTok Shop</a></div></div><a href="projects">Projects</a><a href="proof">Reviews &amp; Testimonials</a><a href="books">Books</a><a href="about">About</a><a href="contact">Contact</a><a class="btn btn-solid nav-cta" href="contact">Get a free assessment</a></nav></div></header><main id="main"><section class="vhero hero-poster" style="background-image:url(video/thom-digital-hero-poster.jpg)">
 <video id="hv" autoplay muted loop playsinline preload="auto" poster="video/thom-digital-hero-poster.jpg" aria-hidden="true"><source src="video/thom-digital-hero-loop.mp4" type="video/mp4"></video>
 <div class="wrap vhero-in"><div class="vhero-copy"><h1>Marketing for Shopify stores and books.</h1>
 <p class="lede">We fix the offer, the page and the trust first. Then we bring the right people to them.</p>
@@ -647,5 +657,25 @@ if(f){
 }
 document.querySelectorAll('[data-copy]').forEach(function(el){el.addEventListener('click',function(){var t=el.getAttribute('data-copy');
  try{navigator.clipboard.writeText(t).then(function(){el.textContent='Copied';},function(){el.textContent=t;});}catch(x){el.textContent=t;}});});
+/* page transition */
+(function(){var h=document.documentElement;
+ function done(){h.classList.remove('arrive');}
+ if(h.classList.contains('arrive')){requestAnimationFrame(function(){requestAnimationFrame(done);});}
+ window.addEventListener('pageshow',function(e){if(e.persisted){var p=document.querySelector('.pt');if(p){p.classList.remove('go');}done();}});
+ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ var pt=document.querySelector('.pt');if(!pt)return;
+ document.addEventListener('click',function(e){
+  if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+  var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;
+  if(a.target&&a.target!=='_self')return;if(a.hasAttribute('download'))return;
+  var u;try{u=new URL(a.href,location.href);}catch(x){return;}
+  if(u.origin!==location.origin||!/^https?:$/.test(u.protocol))return;
+  if(u.pathname===location.pathname&&u.search===location.search)return;
+  e.preventDefault();
+  try{sessionStorage.setItem('tdpt','1');}catch(x){}
+  pt.classList.add('go');
+  setTimeout(function(){location.href=a.href;},520);
+ });
+})();
 })();
 </script></body></html>
