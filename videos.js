@@ -6,6 +6,7 @@ window.TD_VIDEOS = {
   "home-assessment":   { title: "See how the free assessment works", src: "", youtube: "", poster: "", caption: "" },
   "shopify-walkthrough-1": { title: "Store walkthrough", src: "", youtube: "", poster: "", caption: "" },
   "shopify-walkthrough-2": { title: "Store before and after", src: "", youtube: "", poster: "", caption: "" },
+  "projects-trailer": { title: "Romance trailer", src: "video/trailer-romance.mp4", youtube: "", poster: "video/trailer-romance.jpg", caption: "Romance" },
   "trailer-1": { title: "Romance trailer", src: "video/trailer-romance.mp4", youtube: "", poster: "video/trailer-romance.jpg", caption: "Romance" },
       "local-campaigns": { title: "How local campaigns work", src: "", youtube: "", poster: "", caption: "" },
   "tiktokshop-walkthrough": { title: "TikTok Shop walkthrough", src: "", youtube: "", poster: "", caption: "" },
