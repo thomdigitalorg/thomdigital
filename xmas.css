@@ -1,0 +1,27 @@
+.xmas{background:#14532d;color:#fff;position:relative;text-align:center;font-size:.9rem;line-height:1.4;overflow:hidden}
+.xmas[hidden]{display:none!important}
+.xl{position:relative;height:34px;border-bottom:0}
+.xl::before{content:"";position:absolute;left:0;right:0;top:5px;height:2px;background:#0b2d19}
+.xl i{position:absolute;top:6px;width:9px;height:14px;margin-left:-4px;border-radius:50% 50% 50% 50%/55% 55% 45% 45%;background:var(--c);box-shadow:0 0 9px 2px var(--c);animation:tw 1.7s ease-in-out infinite;animation-delay:var(--d)}
+.xl i::before{content:"";position:absolute;left:3px;top:-5px;width:3px;height:6px;background:#0b2d19;border-radius:1px}
+.xl b{position:absolute;top:5px;width:2px;margin-left:-1px;background:#d9c58a;transform-origin:50% 0;animation:sw 3.6s ease-in-out infinite;animation-delay:var(--d)}
+.xl b::after{content:"";position:absolute;left:50%;bottom:-17px;width:17px;height:17px;margin-left:-8.5px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff9,transparent 36%),var(--c);box-shadow:0 2px 4px rgba(0,0,0,.35)}
+.xl b::before{content:"";position:absolute;left:50%;bottom:-3px;width:7px;height:4px;margin-left:-3.5px;background:#ffc300;border-radius:1px;z-index:1}
+@keyframes tw{0%,100%{opacity:1}50%{opacity:.38}}
+@keyframes sw{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+.xmas-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:2px 48px 10px 16px;min-height:34px}
+.xmas-row p{margin:0}
+.xmas-off{background:none;border:1px solid rgba(255,255,255,.5);color:#fff;font:inherit;font-size:.78rem;padding:3px 10px;border-radius:999px;cursor:pointer}
+.xmas-off:hover{background:rgba(255,255,255,.14)}
+.xmas-x{position:absolute;right:8px;top:36px;background:none;border:0;color:#fff;font-size:1.4rem;line-height:1;cursor:pointer;padding:4px 10px;border-radius:6px}
+.xmas-x:hover{background:rgba(255,255,255,.14)}
+.xmas.min .xmas-row,.xmas.min .xmas-x{display:none}
+.xmas.min .xl{height:34px}
+.snow{position:fixed;left:0;top:0;pointer-events:none;z-index:40}
+.sleigh{position:fixed;top:clamp(150px,22vh,210px);left:0;width:210px;z-index:41;pointer-events:none;animation:fly 15s linear 2s 1 both}
+.sleigh svg{display:block;width:100%;height:auto;animation:bob 1.8s ease-in-out infinite}
+@keyframes fly{from{transform:translateX(-260px)}to{transform:translateX(calc(100vw + 60px))}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+.xtrees{position:absolute;left:0;right:0;top:-46px;height:46px;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='46' viewBox='0 0 150 46'%3E%3Cg%3E%3Crect x='20' y='38' width='4' height='8' fill='%235b3a1e'/%3E%3Cpath d='M22 10 36 26H28L40 40H4L16 26H8Z' fill='%23166534'/%3E%3Cpath d='M22 3l1.6 3.6 3.9.3-3 2.5.9 3.8L22 11l-3.4 2.2.9-3.8-3-2.5 3.9-.3Z' fill='%23ffc300'/%3E%3Ccircle cx='17' cy='30' r='1.8' fill='%23e11d2e'/%3E%3Ccircle cx='28' cy='33' r='1.8' fill='%23ffc300'/%3E%3Ccircle cx='22' cy='22' r='1.6' fill='%23fff'/%3E%3C/g%3E%3Cg%3E%3Crect x='72' y='36' width='5' height='10' fill='%235b3a1e'/%3E%3Cpath d='M74.500 2 92 24H82L98 42H51L67 24H57Z' fill='%2314532d'/%3E%3Cpath d='M74.500-4l2 4.400 4.700.4-3.600 3 1.100 4.600-4.200-2.600-4.200 2.600 1.100-4.600-3.600-3 4.700-.4Z' fill='%23ffc300' transform='translate(0 5)'/%3E%3Ccircle cx='68' cy='34' r='2.200' fill='%23e11d2e'/%3E%3Ccircle cx='82' cy='36' r='2.200' fill='%23ffc300'/%3E%3Ccircle cx='75' cy='24' r='2' fill='%23e11d2e'/%3E%3Ccircle cx='74' cy='14' r='1.700' fill='%23fff'/%3E%3C/g%3E%3Cg%3E%3Crect x='123' y='40' width='3' height='6' fill='%235b3a1e'/%3E%3Cpath d='M124.500 18 134 30H129L137 42H112L120 30H115Z' fill='%23166534'/%3E%3Cpath d='M124.500 12l1.300 2.800 3 .3-2.300 2 .7 3-2.700-1.700-2.700 1.700.7-3-2.300-2 3-.3Z' fill='%23ffc300'/%3E%3Ccircle cx='121' cy='36' r='1.500' fill='%23ffc300'/%3E%3Ccircle cx='128' cy='34' r='1.500' fill='%23e11d2e'/%3E%3C/g%3E%3C/svg%3E") repeat-x left bottom/150px 46px}
+@media(max-width:600px){.xl{height:30px}.xmas{font-size:.82rem}.xmas-row{padding:2px 40px 8px 12px}.xmas-x{top:30px;right:4px}.sleigh{width:140px;animation-duration:11s}.xtrees{top:-36px;height:36px;background-size:117px 36px}}
+@media(prefers-reduced-motion:reduce){.xl i,.xl b{animation:none}.sleigh{display:none}}
